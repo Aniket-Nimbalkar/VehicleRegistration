@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HomePage</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Abel|Abril+Fatface|Alegreya|Arima+Madurai|Dancing+Script|Dosis|Merriweather|Oleo+Script|Overlock|PT+Serif|Pacifico|Playball|Playfair+Display|Share|Unica+One|Vibur');
+
+    /* End Fonts */
+    /* Start Global rules */
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    /* End Global rules */
+
+    /* Start body rules */
+    body {
+      background-image: linear-gradient(-225deg, #E3FDF5 0%, #FFE6FA 100%);
+      background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+
+      font-family: 'Vibur', cursive;
+      /*   the main font */
+      font-family: 'Abel', sans-serif;
+      opacity: .95;
+      /* background-image: linear-gradient(to top, #d9afd9 0%, #97d9e1 100%); */
+    }
+
+    /* Navbar container */
+    #logo {
+      height: 47px;
+      width: 56px;
+      float: left;
+    }
+
+    .navbar {
+      overflow: hidden;
+      background-color: #333;
+      font-family: Arial;
+      align-items: center;
+      align-content: center;
+    }
+
+    /* Links inside the navbar */
+    .navbar a {
+      float: left;
+      font-size: 16px;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+
+    }
+
+    #username {
+      float: right;
+    }
+
+    /* The dropdown container */
+    .dropdown {
+      float: left;
+      overflow: hidden;
+    }
+
+    /* Dropdown button */
+    .dropdown .dropbtn {
+      font-size: 16px;
+      border: none;
+      outline: none;
+      color: white;
+      padding: 14px 16px;
+      background-color: inherit;
+      font-family: inherit;
+      /* Important for vertical align on mobile phones */
+      margin: 0;
+      /* Important for vertical align on mobile phones */
+    }
+
+    /* Add a red background color to navbar links on hover */
+    .navbar a:hover,
+    .dropdown:hover .dropbtn {
+      background-color: red;
+    }
+
+    /* Dropdown content (hidden by default) */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+
+    /* Links inside the dropdown */
+    .dropdown-content a {
+      float: none;
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      text-align: left;
+    }
+
+    /* Add a grey background color to dropdown links on hover */
+    .dropdown-content a:hover {
+      background-color: #ddd;
+    }
+
+    /* Show the dropdown menu on hover */
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    #onclick {
+      padding: 11px;
+      font-size: 16px;
+      background-color: initial;
+      color: black;
+    }
+
+    #mydiv {
+      display: hide;
+    }
+
+    #log-out {
+      font-size: 16px;
+      color: white;
+      background-color: inherit;
+      border: none;
+    }
+
+    .text {
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+
+    b {
+      margin-left: 40%;
+      margin-right: 40%;
+      align-content: center;
+      text-align: center;
+      align-items: center;
+    }
+
+    table,
+    th,
+    td {
+      border: 2px solid black;
+      border-collapse: collapse;
+
+    }
+
+    .table {
+      margin-top: 3%;
+      margin-bottom: 3%;
+      margin-left: 30%;
+      margin-right: 30%;
+
+    }
+
+    .table table {
+      width: 100%;
+    }
+
+    th,
+    td {
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      font-size: large;
+      text-align: center;
+    }
+   
+  </style>
+</head>
+
+<body>
+  <div class="navbar">
+    <img src="img.jpg" id="logo">
+    <a href="#">Home</a>
+    <a href="contactus.html">Contact Us</a>
+    <div class="dropdown">
+      <button class="dropbtn">Services
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+          <% if(dota===null){ %>
+          <a href="/registrations">Vehicle Registration</a>
+          <a href="/deleteData">Delete</a>
+          <a href="/insurensepage">Insurense Details</a>
+          <a href="/getpuc">PUC Details</a>
+          <% } else if ( dota !==null && ins===null && puc !=null ){ %>
+            <a href="/updateuser">Update</a>
+            <a href="/deleteData">Delete</a>
+            <a href="/insurensepage"> Insurence Registration</a>
+            <% } else if ( dota !==null && ins!==null && puc===null ){ %>
+              <a href="/updateuser">Update</a>
+              <a href="/deleteData">Delete</a>
+              <a href="/getpuc"> PUC Registration</a>
+              <% } else if ( dota !==null && ins===null && puc===null ){ %>
+                <a href="/updateuser">Update</a>
+                <a href="/deleteData">Delete</a>
+                <a href="/insurensepage">Insurence Registration</a>
+                <a href="/getpuc"> PUC Registration</a>  
+              <% } else { %>
+                <a href="/updateuser">Update</a>
+                <a href="/deleteData">Delete</a>
+              <%  } %>
+      </div>
+
+    </div>
+    <a href="aboutus.html">About Us</a>
+
+    <a id="username">
+      User:- <%= details.username%>
+
+    </a>
+    <a>
+      <form action="/logout" method="post">
+        <button type="submit" id="log-out">LogOut</button>
+      </form>
+    </a>
+
+  </div>
+
+  <% if(dota===null){ %>
+    <h1>
+      Your Id for Vehicle Registration:- <%=details.UserId%>
+    </h1>
+    <h1>
+      <p>You Have Not Registered Vehicle on Our Portal</p>
+    </h1>
+    <% } else if (ins===null && puc===null){ %>
+      <h1>
+        Your Registered Details :- <button id="onclick" onclick="myFunction()">Click Here</button>
+      </h1>
+      <div id="myDIV" style="display: none;">
+        <div class="text">
+          <div class="text">
+            <b>Personal Details</b> <br>
+          </div>
+          <div class="table">
+            <table>
+              <tr>
+                <th>Name: </th>
+                <td>
+                  <%= dota.name%>
+                </td>
+              </tr>
+              <tr>
+                <th>Address: </th>
+                <td>
+                  <%= dota.address%>
+                </td>
+              </tr>
+              <tr>
+                <th>City: </th>
+                <td>
+                  <%= dota.city%>
+                </td>
+              </tr>
+              <tr>
+                <th>State: </th>
+                <td>
+                  <%= dota.state%>
+                </td>
+              </tr>
+              <tr>
+                <th>Mobile Number: </th>
+                <td>
+                  <%= dota.MobileNo%>
+                </td>
+              </tr>
+              <tr>
+                <th>Date Of Birth: </th>
+                <td>
+                  <%= dota.dateOfBirth%>
+                </td>
+              </tr>
+              <tr>
+                <th>Age: </th>
+                <td>
+                  <%= dota.age%>
+                </td>
+              </tr>
+              <tr>
+                <th>Gender: </th>
+                <td>
+                  <%= dota.gender%>
+                </td>
+              </tr>
+
+            </table>
+          </div>
+          <div class="text">
+            <b>License Details</b> <br>
+          </div>
+          <div class="table">
+            <table>
+              <tr>
+                <th>LicenseNo: </th>
+                <td>
+                  <%= dota.licenseNo%>
+                </td>
+              </tr>
+              <tr>
+                <th>Vehicle Model Name: </th>
+                <td>
+                  <%= dota.modelname%>
+                </td>
+              </tr>
+              <tr>
+                <th>Valid Till: </th>
+                <td>
+                  <%= dota.validtill%>
+                </td>
+              </tr>
+              <tr>
+                <th>Commercial Use: </th>
+                <td>
+                  <%= dota.comuse%>
+                </td>
+              </tr>
+              <tr>
+                <th>Vehicle Type:</th>
+                <td>
+                  <%= dota.vehitype%>
+                </td>
+              </tr>
+              <tr>
+                <th>Active: </th>
+                <td>
+                  <%= dota.activeLicense%>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div class="text">
+            <b>Vehicle Details</b> <br>
+          </div>
+          <div class="table">
+            <table>
+              <tr>
+                <th>Vehicle Model: </th>
+                <td>
+                  <%= detail.modelname%>
+                </td>
+              </tr>
+
+              <tr>
+                <th>Fuel Type: </th>
+                <td>
+                  <%= detail.FuelType%>
+                </td>
+              </tr>
+              <tr>
+                <th>No. of Wheels: </th>
+                <td>
+                  <%= detail.Wheels%>
+                </td>
+              </tr>
+              <tr>
+                <th>Engine No.</th>
+                <td>
+                  <%= detail.EngineNumber%>
+                </td>
+              </tr>
+            </table>
+          </div>
+          
+          <% } else if ( ins !==null && puc===null){ %>
+            <h1>
+              Your Registered Details :- <button id="onclick" onclick="myFunction()">Click Here</button>
+            </h1>
+            <div id="myDIV" style="display: none;">
+              <div class="text">
+                <div class="text">
+                  <b>Personal Details</b> <br>
+                </div>
+                <div class="table">
+                  <table>
+                    <tr>
+                      <th>Name: </th>
+                      <td>
+                        <%= dota.name%>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>Address: </th>
+                      <td>
+                        <%= dota.address%>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>City: </th>
+                      <td>
+                        <%= dota.city%>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>State: </th>
+                      <td>
+                        <%= dota.state%>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>Mobile Number: </th>
+                      <td>
+                        <%= dota.MobileNo%>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>Date Of Birth: </th>
+                      <td>
+                        <%= dota.dateOfBirth%>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>Age: </th>
+                      <td>
+                        <%= dota.age%>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>Gender: </th>
+                      <td>
+                        <%= dota.gender%>
+                      </td>
+                    </tr>
+
+                  </table>
+                </div>
+                <div class="text">
+                  <b>License Details</b> <br>
+                </div>
+                <div class="table">
+                  <table>
+                    <tr>
+                      <th>LicenseNo: </th>
+                      <td>
+                        <%= dota.licenseNo%>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>Vehicle Model Name: </th>
+                      <td>
+                        <%= dota.modelname%>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>Valid Till: </th>
+                      <td>
+                        <%= dota.validtill%>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>Commercial Use: </th>
+                      <td>
+                        <%= dota.comuse%>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>Vehicle Type:</th>
+                      <td>
+                        <%= dota.vehitype%>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>Active: </th>
+                      <td>
+                        <%= dota.activeLicense%>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <div class="text">
+                  <b>Vehicle Details</b> <br>
+                </div>
+                <div class="table">
+                  <table>
+                    <tr>
+                      <th>Vehicle Model: </th>
+                      <td>
+                        <%= detail.modelname%>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <th>Fuel Type: </th>
+                      <td>
+                        <%= detail.FuelType%>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>No. of Wheels: </th>
+                      <td>
+                        <%= detail.Wheels%>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>Engine No.</th>
+                      <td>
+                        <%= detail.EngineNumber%>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <div class="text">
+                  <b>Insurense Detail</b> <br>
+                </div>
+                <div class="table">
+                  <table>
+                    <tr>
+                      <th> Id</th>
+                      <td>
+                        <%= ins.InsurenseId%>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+
+      <% } else if ( ins===null && puc !==null) { %>
+        <div class="text">
+          <h1>
+            Your Registered Details :- <button id="onclick" onclick="myFunction()">Click Here</button>
+          </h1>
+          <div id="myDIV" style="display: none;">
+            <div class="text">
+              <div class="text">
+                <b>Personal Details</b> <br>
+              </div>
+              <div class="table">
+                <table>
+                  <tr>
+                    <th>Name: </th>
+                    <td>
+                      <%= dota.name%>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>Address: </th>
+                    <td>
+                      <%= dota.address%>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>City: </th>
+                    <td>
+                      <%= dota.city%>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>State: </th>
+                    <td>
+                      <%= dota.state%>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>Mobile Number: </th>
+                    <td>
+                      <%= dota.MobileNo%>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>Date Of Birth: </th>
+                    <td>
+                      <%= dota.dateOfBirth%>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>Age: </th>
+                    <td>
+                      <%= dota.age%>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>Gender: </th>
+                    <td>
+                      <%= dota.gender%>
+                    </td>
+                  </tr>
+
+                </table>
+              </div>
+              <div class="text">
+                <b>License Details</b> <br>
+              </div>
+              <div class="table">
+                <table>
+                  <tr>
+                    <th>LicenseNo: </th>
+                    <td>
+                      <%= dota.licenseNo%>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>Vehicle Model Name: </th>
+                    <td>
+                      <%= dota.modelname%>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>Valid Till: </th>
+                    <td>
+                      <%= dota.validtill%>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>Commercial Use: </th>
+                    <td>
+                      <%= dota.comuse%>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>Vehicle Type:</th>
+                    <td>
+                      <%= dota.vehitype%>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>Active: </th>
+                    <td>
+                      <%= dota.activeLicense%>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+              <div class="text">
+                <b>Vehicle Details</b> <br>
+              </div>
+              <div class="table">
+                <table>
+                  <tr>
+                    <th>Vehicle Model: </th>
+                    <td>
+                      <%= detail.modelname%>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <th>Fuel Type: </th>
+                    <td>
+                      <%= detail.FuelType%>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>No. of Wheels: </th>
+                    <td>
+                      <%= detail.Wheels%>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>Engine No.</th>
+                    <td>
+                      <%= detail.EngineNumber%>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+
+              <b>PUC Detail</b> <br>
+            </div>
+            <div class="table">
+              <table>
+                <tr>
+                  <th>PUC Id</th>
+                  <td>
+                    <%= puc.pucid%>
+                  </td>
+                </tr>
+                <tr>
+                  <th>Test Date</th>
+                  <td>
+                    <%= puc.TestDate%>
+                  </td>
+                </tr>
+                <tr>
+                  <th>Test Time</th>
+                  <td>
+                    <%= puc.TestTime%>
+                  </td>
+                </tr>
+                <tr>
+                  <th>Min RPM</th>
+                  <td>
+                    <%= puc.MinRPM%>
+                  </td>
+                </tr>
+                <tr>
+                  <th>Max RPM</th>
+                  <td>
+                    <%= puc.MaxRPM%>
+                  </td>
+                </tr>
+                <tr>
+                  <th>Temperature</th>
+                  <td>
+                    <%= puc.Temperature%>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <% } else { %>
+          <h1>
+            Your Registered Details :- <button id="onclick" onclick="myFunction()">Click Here</button>
+          </h1>
+          <div id="myDIV" style="display: none;">
+
+            <div class="text">
+              <b>Personal Details</b> <br>
+            </div>
+            <div class="table">
+              <table>
+                <tr>
+                  <th>Name: </th>
+                  <td>
+                    <%= dota.name%>
+                  </td>
+                </tr>
+                <tr>
+                  <th>Address: </th>
+                  <td>
+                    <%= dota.address%>
+                  </td>
+                </tr>
+                <tr>
+                  <th>City: </th>
+                  <td>
+                    <%= dota.city%>
+                  </td>
+                </tr>
+                <tr>
+                  <th>State: </th>
+                  <td>
+                    <%= dota.state%>
+                  </td>
+                </tr>
+                <tr>
+                  <th>Mobile Number: </th>
+                  <td>
+                    <%= dota.MobileNo%>
+                  </td>
+                </tr>
+                <tr>
+                  <th>Date Of Birth: </th>
+                  <td>
+                    <%= dota.dateOfBirth%>
+                  </td>
+                </tr>
+                <tr>
+                  <th>Age: </th>
+                  <td>
+                    <%= dota.age%>
+                  </td>
+                </tr>
+                <tr>
+                  <th>Gender: </th>
+                  <td>
+                    <%= dota.gender%>
+                  </td>
+                </tr>
+
+              </table>
+            </div>
+            <div class="text">
+              <b>License Details</b> <br>
+            </div>
+            <div class="table">
+              <table>
+                <tr>
+                  <th>LicenseNo: </th>
+                  <td>
+                    <%= dota.licenseNo%>
+                  </td>
+                </tr>
+                <tr>
+                  <th>Vehicle Model Name: </th>
+                  <td>
+                    <%= dota.modelname%>
+                  </td>
+                </tr>
+                <tr>
+                  <th>Valid Till: </th>
+                  <td>
+                    <%= dota.validtill%>
+                  </td>
+                </tr>
+                <tr>
+                  <th>Commercial Use: </th>
+                  <td>
+                    <%= dota.comuse%>
+                  </td>
+                </tr>
+                <tr>
+                  <th>Vehicle Type:</th>
+                  <td>
+                    <%= dota.vehitype%>
+                  </td>
+                </tr>
+                <tr>
+                  <th>Active: </th>
+                  <td>
+                    <%= dota.activeLicense%>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <div class="text">
+              <b>Vehicle Details</b> <br>
+            </div>
+            <div class="table">
+              <table>
+                <tr>
+                  <th>Vehicle Model: </th>
+                  <td>
+                    <%= detail.modelname%>
+                  </td>
+                </tr>
+
+                <tr>
+                  <th>Fuel Type: </th>
+                  <td>
+                    <%= detail.FuelType%>
+                  </td>
+                </tr>
+                <tr>
+                  <th>No. of Wheels: </th>
+                  <td>
+                    <%= detail.Wheels%>
+                  </td>
+                </tr>
+                <tr>
+                  <th>Engine No.</th>
+                  <td>
+                    <%= detail.EngineNumber%>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <div class="text">
+              <b>Insurense Detail</b> <br>
+            </div>
+            <div class="table">
+              <table>
+                <tr>
+                  <th>Insurence Id</th>
+                  <td>
+                    <%= ins.InsurenseId%>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <div class="text">
+              <b>PUC Details</b> <br>
+            </div>
+            <div class="table">
+              <table>
+                <tr>
+                  <th>PUC ID</th>
+                  <td>
+                    <%= puc.pucid%>
+                  </td>
+                </tr>
+                <tr>
+                  <th>Test Date</th>
+                  <td>
+                    <%= puc.TestDate%>
+                  </td>
+                </tr>
+                <tr>
+                  <th>Test Time</th>
+                  <td>
+                    <%= puc.TestTime%>
+                  </td>
+                </tr>
+                <tr>
+                  <th>Min RPM</th>
+                  <td>
+                    <%= puc.MinRPM%>
+                  </td>
+                </tr>
+                <tr>
+                  <th>Max RPM</th>
+                  <td>
+                    <%= puc.MaxRPM%>
+                  </td>
+                </tr>
+                <tr>
+                  <th>Temperature</th>
+                  <td>
+                    <%= puc.Temperature%>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <% } %>
+              <script>
+                function myFunction() {
+                  var x = document.getElementById("myDIV");
+                  if (x.style.display !== "none") {
+                    x.style.display = "none";
+                  } else {
+                    x.style.display = "block";
+                  }
+                }
+              </script>
+
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+ <html>
+ <head>
+    <link rel="stylesheet" href="/public/style.css">
+    <style>
+                @import url('https://fonts.googleapis.com/css?family=Abel|Abril+Fatface|Alegreya|Arima+Madurai|Dancing+Script|Dosis|Merriweather|Oleo+Script|Overlock|PT+Serif|Pacifico|Playball|Playfair+Display|Share|Unica+One|Vibur');
+/* End Fonts */
+/* Start Global rules */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    background-image: linear-gradient(-225deg, #E3FDF5 0%, #FFE6FA 100%);
+background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+background-attachment: fixed;
+  background-repeat: no-repeat;
+
+    font-family: 'Vibur', cursive;
+/*   the main font */
+    font-family: 'Abel', sans-serif;
+opacity: .95;
+/* background-image: linear-gradient(to top, #d9afd9 0%, #97d9e1 100%); */
+}
+        form {
+    width: 450px;
+    min-height: 500px;
+    height: auto;
+    border-radius: 5px;
+    margin: 2% auto;
+    box-shadow: 0 9px 50px hsla(20, 67%, 75%, 0.31);
+    padding: 2%;
+    background-image: linear-gradient(-225deg, #E3FDF5 50%, #FFE6FA 50%);
+}
+        .text {
+            margin-top: auto;
+            margin-bottom: auto;
+        }
+        hr {
+            border: none;
+            top: 10px;
+            background: black;
+            margin-bottom: 10px;
+            height: 2px;
+            position: relative;
+        }
+        b {
+            margin-left: 40%;
+            margin-right: 40%;
+            align-content: center;
+            text-align: center;
+            align-items: center;
+        }
+        table, th, td {
+          border: 2px solid black;
+          border-collapse: collapse;
+          
+        }
+        table {
+            width:  90%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        th, td {
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-size: large;
+            text-align: left;
+        }
+        </style>
+   <title>Vehicle Registration Data</title>
+ </head>
+ <body>
+    <div class="text">
+        <b>Personal Details</b> <br>
+    </div>
+    <div class="table">
+        <table>
+            
+            <tr>
+                <th>Name: </th> <td><%= details.name%> </td>
+            </tr>
+            <tr>
+                <th>Address: </th> <td><%= details.address%> </td>
+            </tr>
+            <tr>
+                <th>City: </th> <td><%= details.city%> </td>   
+            </tr>
+            <tr>
+                <th>State: </th> <td><%= details.state%> </td>
+            </tr>
+        <tr>
+            <th>Mobile Number: </th> <td><%= details.MobileNo%> </td>
+        </tr>
+        <tr>
+            <th>Date Of Birth: </th> <td><%= details.dateOfBirth%> </td>    
+        </tr>
+        <tr>
+            <th>Age: </th> <td><%= details.age%> </td>    
+        </tr>
+        <tr>
+            <th>Gender: </th> <td><%= details.gender%> </td>    
+        </tr>
+        
+    </table> <hr>
+</div>
+<div class="text">    
+    <b>Vehicle Details</b> <br>
+</div>
+<div class="table">
+    <table>
+        <tr><th>LicenseNo: </th> <td><%= details.licenseNo%> </td>
+        </tr>
+        <tr><th>Valid Till: </th> <td><%= details.validtill%> </td>
+        </tr>
+        <tr>
+            <th>Commercial Use: </th> <td><%= details.comuse%> </td>
+        </tr>
+        <tr>
+            <th>Vehicle Type:</th> <td><%= details.vehitype%></td>
+        </tr>
+        <tr>
+            <th>Active: </th> <td><%= details.activeLicense%> </td>
+        </tr>
+    </table>      
+</div>
+<div class="text">
+    <b>Vehicle Model Details</b> <br>
+  </div>
+  <div class="table">
+    <table>
+      <tr>
+        <th>Vehicle Model: </th>
+        <td>
+          <%= vehicleD.modelname%>
+        </td>
+      </tr>
+
+      <tr>
+        <th>Fuel Type: </th>
+        <td>
+          <%= vehicleD.FuelType%>
+        </td>
+      </tr>
+      <tr>
+        <th>No. of Wheels: </th>
+        <td>
+          <%= vehicleD.Wheels%>
+        </td>
+      </tr>
+      <tr>
+        <th>Engine No.</th>
+        <td>
+          <%= vehicleD.EngineNumber%>
+        </td>
+      </tr>
+    </table>
+  </div>
+</body>
+</html>

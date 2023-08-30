@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PUC Details</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form action="/getpuc" method="post">
+        UserID: <input type="number" readonly value="<%= setvalue %>" name="UserID"><br>
+        License Number: <input type="text" readonly value="<%= pucdata %>" name="myLicense"><br>
+        PUC ID: <input type="number" readonly value="<%= pucid %>" name="PucID"><br>
+        Date of Test: <input type="date" name="testDate" id=""><br>
+        Time of Test: <input type="time" name="testtime" id=""><br>
+        Test Data <br> 
+        RPM min: <input type="number" name="minRPM" id="" max="1000"><br>
+        RPM max: <input type="number" name="maxRPM" id="" max="3000"><br>
+        Exhaust Temperature: <input type="number" name="temperature" id="" max="150" min="40"><br>
+        <input type="checkbox" name="" id="" class="checkbox"><br>
+        <p class="checkbox-text">
+            Idliling Emmision Below Limit
+        </p> 
+        <input type="checkbox" name="" id="" class="checkbox"><br>
+        <p class="checkbox-text">
+            High Idliling Emmision Below Limit
+        </p> 
+        <input type="checkbox" name="" id="" class="checkbox"><br>
+        <p class="checkbox-text">
+            Smoke Density Below Limit
+        </p> 
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

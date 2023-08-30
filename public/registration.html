@@ -1,0 +1,75 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+                @import url('https://fonts.googleapis.com/css?family=Abel|Abril+Fatface|Alegreya|Arima+Madurai|Dancing+Script|Dosis|Merriweather|Oleo+Script|Overlock|PT+Serif|Pacifico|Playball|Playfair+Display|Share|Unica+One|Vibur');
+/* End Fonts */
+/* Start Global rules */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    background-image: linear-gradient(-225deg, #E3FDF5 0%, #FFE6FA 100%);
+background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+background-attachment: fixed;
+  background-repeat: no-repeat;
+
+    font-family: 'Vibur', cursive;
+/*   the main font */
+    font-family: 'Abel', sans-serif;
+opacity: .95;
+/* background-image: linear-gradient(to top, #d9afd9 0%, #97d9e1 100%); */
+}
+        form {
+    width: 450px;
+    min-height: 500px;
+    height: auto;
+    border-radius: 5px;
+    margin: 2% auto;
+    box-shadow: 0 9px 50px hsla(20, 67%, 75%, 0.31);
+    padding: 2%;
+    background-image: linear-gradient(-225deg, #E3FDF5 50%, #FFE6FA 50%);
+}
+    </style>
+    <title>Registration</title>
+</head>
+<body>
+    <form action="/submit" method="post" class = "resform">
+        <b>Personal Details of Owner Of Vehicle</b><br>
+        Id : <input type="number" class="form-input" class="text-input" name="myID" placeholder="User Same Id as SignUp"><br>
+        Full Name: <input type="text" name="Name" placeholder="Enter Your Full Name" maxlength="100"><br>
+        Address: <input type="text" name="myAddress" placeholder="Enter your Address" maxlength="200"><br>
+        City: <input type="text" name="myCity" id="mycity"> <br>
+        State: <input type="text" name="myState" id="mystate"> <br>
+        Mobile No: <input type="number" name="myPhone" placeholder="Enter Phone Number"><br>
+        Birthdate : <input type="date" name="mydate" id="mydate"><br>
+        Age: <input type="number" name="myAge" maxlength="3"><br>
+        Gender<select name="myGender" id="My Gender">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select><br>
+        <hr>
+        <b>Vehicle Related Details</b><br>
+        Driving License No : <input type="text" name="myLicense"maxlength="15"><br>
+        Vehicle Model Name: <input type="text" name="myModel"><br>
+        Valid Till: <input type="text" name="ValidTill" id="ValidTill" placeholder="2024"><br>
+        Commercial Use: <input type="text" name="Commercial" placeholder="Transport/Non Transport"><br>
+        Vehicle Type<select name="myType" id="My Type">
+            <option value="LMG">LMG</option>
+            <option value="MCWG">MCVG</option>
+            <option value="HGMV">HGMV</option>
+        </select><br>
+        License Active Status: <input name="Status" id="mystatus" placeholder="YES/NO"><br>
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+        <br><br>     
+    </form>
+</body>
+</html>

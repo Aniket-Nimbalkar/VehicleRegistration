@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insurence</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form action="/getInsurense" method="post">
+        UserID : <input type="number" name="UserId" id="" value="<%=setvalue%>" readonly><br>
+        Insurence ID: <input type="number" placeholder="unique" name="InsId" readonly value="<%=insid%>"><br>
+        License No: <input type="text" name="myLicense" id="" value="<%=insdata%>" readonly> <br>
+        Month Of Purchase: <input type="date" name="purchasedate" id=""><br>
+        Period Of Insurence: <br>
+        From: <input type="date" name="fromdate" id=""> <br>
+        To: <input type="date" name="todate" id=""><br>
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+    </form>
+</body>
+</html>

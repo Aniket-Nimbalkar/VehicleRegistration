@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="style.css">
+    <title>Registration</title>
+</head>
+<body>
+    
+    <form action="/submit" method="post" class = "resform">
+        <b>Personal Details of Owner Of Vehicle</b><br>
+        User ID: <input type="number" class="form-input" class="text-input" name="myID" placeholder="unique" value="<%=setval%>" readonly> <br>
+        Full Name: <input type="text" name="Name" placeholder="Enter Your Full Name" maxlength="100"><br>
+        Address: <input type="text" name="myAddress" placeholder="Enter your Address" maxlength="200"><br>
+        City: <input type="text" name="myCity" id="mycity"> <br>
+        State: <input type="text" name="myState" id="mystate"> <br>
+        Mobile No: <input type="tel" name="myPhone" placeholder="Enter Phone Number" pattern="[0-9]{10}"><br>
+        Birthdate : <input type="date" name="mydate" id="mydate" min="1900-01-01" max="2010-01-01"><br>
+        Age: <input type="number" name="myAge" maxlength="3"><br>
+        Gender<select name="myGender" id="My Gender">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select><br>
+        <hr>
+        <b>Vehicle Related Details</b><br>
+        Driving License No : <input type="text" name="myLicense"maxlength="15"><br>
+        Vehicle Model Name: <input type="text" name="myModel"><br>
+        Valid Till: <input type="text" name="ValidTill" id="ValidTill" placeholder="2024"><br>
+        Commercial Use: <input type="text" name="Commercial" placeholder="Transport/Non Transport"><br>
+        Vehicle Type<select name="myType" id="My Type">
+            <option value="LMG">LMG</option>
+            <option value="MCWG">MCVG</option>
+            <option value="HGMV">HGMV</option>
+            <option value="LMG+MCWG">LMG+MCWG</option>
+        </select><br>
+        License Active Status: <input name="Status" id="mystatus" placeholder="YES/NO"><br>
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+        <br><br>     
+    </form>
+</body>
+</html>

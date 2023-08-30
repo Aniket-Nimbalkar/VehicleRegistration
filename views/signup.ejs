@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+    <title>SignUp</title>
+</head>
+<body>
+    
+    <form action="/signup" method="post">
+        <div class="con">
+            <!--     Start  header Content  -->
+            <header class="head-form">
+               <h2>Sign Up</h2>
+               <!--     A welcome message or an explanation of the login form -->
+               <p>Create Account</p>
+            </header>
+        <div class="field-set">
+            
+            Email : <input type="email" class="form-input" class="text-input" name="EmailID" placeholder="Valid Mail"><br>
+            Phone No: <input type="tel" class="form-input" class="text-input" name="PhoneNum" placeholder="" pattern="[0-9]{10}"><br>
+            Username: <input type="text" class="form-input" class="text-input" name="myUsername" placeholder="Enter Mail Id or Username"><br>
+            Password: <input type="password" class="form-input" class="text-input" name="Password" placeholder="Use Strong Password"><br>
+            User Id : <input type="number" class="form-input" class="text-input" name="myID" placeholder="unique" value="<%=numID%>" readonly> <br>
+            <input type="checkbox"  id="check" class="checkbox">  <p class="checkbox-text"> I Had Read Privacy Policy <br>
+            </p> 
+        </div>
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+      </form>
+</body>
+</html>

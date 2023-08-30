@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Update</title>
+</head>
+<body>
+    <form action="/update" method="post">
+        Update information
+        Select Field to Update: <br>
+        licenseno : <input type="text" name="licenseno" value="<%=details.licenseNo %>" readonly><br>
+        Select Field To Update: <select name="upval" id="My Type"><br>
+            <option value="name">name</option>
+            <option value="address">Address</option>
+            <option value="city">City</option>
+            <option value="MobileNo">Mobile Number</option>
+            
+        </select><br>
+        Update: <input type="text" name="updateName">
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+    </form>
+</body>
+</html>
